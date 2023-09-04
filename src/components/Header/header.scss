@@ -1,0 +1,33 @@
+@import "../../globals/vars";
+
+a {
+    text-decoration: none !important;
+}
+
+img {
+    cursor: pointer;
+}
+
+.Header--options {
+    display: flex;
+    justify-content: space-around;
+    width: 18rem;
+    align-items: center;
+
+    h6 {
+        margin: 0;
+        font-weight: 600;
+    }
+
+    span {
+        color: white;
+    }
+}
+
+.active {
+    color: $secondary-color !important;
+}
+
+.Header--logo {
+    width: 2rem;
+}

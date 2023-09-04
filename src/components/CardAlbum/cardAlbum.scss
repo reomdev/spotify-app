@@ -1,0 +1,11 @@
+@import "../../globals/vars";
+@import "../../globals/mixins";
+
+.Card--album {
+    background: $primary-color !important;
+    border: none !important;
+
+    @include desktop {
+        width: 18rem;
+    }
+}

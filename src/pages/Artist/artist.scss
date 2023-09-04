@@ -1,0 +1,66 @@
+@import "../../globals/mixins";
+
+.Artist {
+    @include desktop {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+}
+
+.Artist--img {
+    width: 10rem;
+    border-radius: 100%;
+    margin-bottom: 1rem;
+    margin-top: 3rem;
+    aspect-ratio: 1;
+
+    @include desktop {
+        width: 12rem;
+        margin-top: 2rem;
+    }
+}
+
+.Artist--albums {
+    display: flex;
+    flex-wrap: wrap;
+    width: 85%;
+    margin: 0 auto;
+}
+
+.Artist--name {
+    font-size: 2.7rem;
+}
+
+.Artist--check {
+    margin-top: 2rem;
+    display: flex;
+    align-items: center;
+
+    img {
+        width: 1.2rem;
+
+        @include desktop {
+            width: 1rem;
+        }
+    }
+
+    h6 {
+        margin: 0;
+        margin-left: 1rem;
+        font-weight: 600;
+
+        @include desktop {
+            font-size: .9rem;
+        }
+    }
+}
+
+.Artist--title-albums {
+    text-align: center;
+
+    @include desktop {
+        text-align: left;
+        margin-left: 8rem;
+    }
+}

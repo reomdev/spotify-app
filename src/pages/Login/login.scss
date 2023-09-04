@@ -1,0 +1,64 @@
+@import "../../globals/mixins";
+
+.Login-container {
+    display: flex;
+    min-height: 85vh;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.Login--img {
+    width: 28rem;
+    margin: 0 auto;
+    display: block;
+
+    @include tablet {
+        width: 70%;
+    }
+}
+
+.Login--title {
+    font-size: 4rem;
+    font-weight: bold;
+
+    @include tablet {
+        font-size: 2.5rem;
+        text-align: justify;
+    }
+}
+
+.Login--container-text {
+    width: 80%;
+    display: block;
+    margin: 0 auto;
+    margin-top: 3rem;
+
+    @include desktop {
+        margin-top: 0rem;
+        margin-left: 0;
+    }
+}
+
+.Login--link {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+
+    img {
+        margin-left: 3rem;
+    }
+
+    h6 {
+        margin: 0;
+        font-weight: 600;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
+    @include desktop {
+        margin-top: 5rem;
+    }
+}

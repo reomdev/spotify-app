@@ -1,0 +1,78 @@
+@import "../../globals/vars";
+@import "../../globals/mixins";
+
+.Home {
+    width: auto;
+
+    @include desktop {
+        width: 25rem;
+        display: block;
+        margin: 0 auto;
+        text-align: center;
+    }
+}
+
+.Home--title {
+    font-size: 3rem !important;
+    font-weight: bold;
+
+    @include desktop {
+        font-size: 4rem !important;
+    }
+}
+
+.Home--subtitle {
+    line-height: 1.9rem;
+    margin-top: 1.5rem;
+    text-align: justify;
+
+    @include desktop {
+        text-align: center;
+    }
+}
+
+.Home--search {
+    position: relative;
+    margin-top: 1rem;
+
+    @include desktop {
+        width: 40rem;
+        margin: 0 auto;
+        margin-top: 2rem;
+    }
+
+    input {
+        padding: 1rem;
+        border-radius: 1.5rem;
+    }
+
+    button {
+        position: absolute;
+        right: .5rem;
+        top: 0.6rem;
+        border-radius: 2rem;
+        border: none;
+        background: rgb(214, 243, 121);
+        color: rgb(0, 0, 0);
+        font-weight: 600;
+        width: 7.5rem;
+        height: 2.5rem;
+
+        &:hover,
+        :active {
+            background: $secondary-color;
+            color: $black;
+        }
+    }
+}
+
+.Home--list {
+    padding: 2rem;
+}
+
+.Home--list-artist {
+    display: flex;
+    justify-content: space-between;
+    width: auto;
+    flex-wrap: wrap;
+}

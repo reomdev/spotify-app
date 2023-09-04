@@ -1,0 +1,36 @@
+@import "../../globals/mixins";
+
+.Albums {
+    width: auto;
+
+    @include desktop {
+        width: 30rem;
+        display: block;
+        margin: 0 auto;
+        text-align: center;
+    }
+}
+
+.Albums--list-albums {
+    display: flex;
+    width: 85%;
+    flex-wrap: wrap;
+    margin: 0 auto;
+}
+
+.Albums--title {
+    font-size: 3rem !important;
+    font-weight: bold;
+}
+
+.Albums--subtitle {
+    line-height: 1.9rem;
+    margin-top: 1.5rem;
+    text-align: justify;
+
+    @include desktop {
+        margin-top: 2rem;
+        margin-bottom: 3rem;
+        text-align: center;
+    }
+}

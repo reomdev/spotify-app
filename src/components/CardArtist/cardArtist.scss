@@ -1,0 +1,28 @@
+@import "../../globals/vars";
+@import "../../globals/mixins";
+
+.Card--artist {
+    background: $primary-color !important;
+    padding: .2rem;
+    border-radius: 1rem;
+
+    img {
+        @include desktop {
+            max-height: 15.5rem !important;
+            border-radius: 1rem;
+        }
+    }
+
+    @include desktop {
+        width: 18rem;
+    }
+
+    &:hover {
+        background: $secondary-color !important;
+
+        h4,
+        p {
+            color: $black !important;
+        }
+    }
+}
