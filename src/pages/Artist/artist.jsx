@@ -4,9 +4,13 @@ import CardAlbum from "../../components/CardAlbum/cardAlbum";
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { getArtistById, getAlbumsOfArtist } from "../../api";
+import { useSelector } from "react-redux";
 
 const Artist = () => {
   const params = useParams();
+
+  const albumsFav = useSelector((state) => state.favorite.value);
+
   const [artist, setArtist] = useState();
   const [albums, setAlbums] = useState();
   const [show, setShow] = useState(false);
@@ -14,7 +18,7 @@ const Artist = () => {
   useEffect(() => {
     getArtist(params.id);
     getAlbums(params.id);
-  }, [params.id]);
+  });
 
   const getArtist = async (id) => {
     const artist = await getArtistById(id);
@@ -23,6 +27,11 @@ const Artist = () => {
 
   const getAlbums = async (id) => {
     const albums = await getAlbumsOfArtist(id);
+    albums.items = albums.items.map((album) => {
+      return albumsFav.find((value) => value.id === album.id)
+        ? { ...album, favorite: true }
+        : { ...album, favorite: false };
+    });
     setAlbums(albums);
     setShow(true);
   };

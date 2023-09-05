@@ -3,13 +3,21 @@ import CardArtist from "../../components/CardArtist/cardArtist";
 import { searchQuery } from "../../api";
 import "./home.scss";
 
+const RenderArtists = ({ artists }) => {
+  return artists.map((artist) => (
+    <CardArtist key={artist.id} artist={artist} />
+  ));
+};
+
 const Home = () => {
   const [artist, setArtist] = useState([]);
+  const [show, setShow] = useState(false);
   const inputSearch = useRef("Simon");
 
   const search = useCallback(async () => {
     const resultSearch = await searchQuery(inputSearch.current.value);
     setArtist(resultSearch.artists);
+    setShow(true);
   }, []);
 
   return (
@@ -52,9 +60,7 @@ const Home = () => {
             </h6>
             <br />
             <div className="Home--list-artist">
-              {artist.items.map((artist) => (
-                <CardArtist key={artist.id} artist={artist} />
-              ))}
+              {show && <RenderArtists artists={artist.items} />}
             </div>
           </div>
         ) : (

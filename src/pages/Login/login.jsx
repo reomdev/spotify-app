@@ -14,7 +14,6 @@ function Login() {
       const access_token = location.hash.split("access_token=")[1];
       localStorage.setItem("access_token", access_token);
       window.hash = "";
-      console.log("render ", access_token);
       navigate("/home", { replace: true });
     }
   }, [location.hash, navigate]);

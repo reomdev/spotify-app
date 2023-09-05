@@ -4,7 +4,7 @@ import "./albums.scss";
 
 const Albums = () => {
   const albums = useSelector((state) => state.favorite.value);
-  console.log(albums);
+
   return (
     <>
       <div className="container-fluid">
@@ -23,7 +23,7 @@ const Albums = () => {
           <div className="col-md-12">
             <div className="Albums--list-albums">
               {albums.map((album) => (
-                <CardAlbum key={album} album={album} />
+                <CardAlbum key={album.id} album={album} />
               ))}
             </div>
           </div>
