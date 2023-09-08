@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import "./cardArtist.scss";
-// import artist from "../../assets/img/a2.svg";
 
 const CardArtist = ({ artist }) => {
   return (

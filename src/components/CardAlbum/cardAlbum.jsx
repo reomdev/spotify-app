@@ -15,7 +15,12 @@ const ButtonFavorite = ({ dispatch, album, setFavorite }) => {
   };
 
   return (
-    <button className="btn btn-primary" onClick={addFav}>
+    <button
+      className="btn btn-primary"
+      onClick={() => {
+        addFav();
+      }}
+    >
       + Add Album
     </button>
   );
@@ -23,14 +28,17 @@ const ButtonFavorite = ({ dispatch, album, setFavorite }) => {
 
 const ButtonDeleteFavorite = ({ dispatch, album, setFavorite }) => {
   const rmvFavorite = () => {
-    // console.log(album.favorite);
-    // album.favorite = !album.favorite;
     setFavorite(false);
     dispatch(removeFavorite(album));
   };
 
   return (
-    <button className="btn btn-danger" onClick={rmvFavorite}>
+    <button
+      className="btn btn-danger"
+      onClick={() => {
+        rmvFavorite();
+      }}
+    >
       - Remove album
     </button>
   );
@@ -48,11 +56,6 @@ const CardAlbum = ({ album }) => {
           {album.name} - {album.favorite}
         </h3>
         <p>Publicado : {album.release_date}</p>
-        {/* {!album.favorite ? (
-          <ButtonFavorite dispatch={dispatch} album={album} />
-        ) : (
-          <ButtonDeleteFavorite dispatch={dispatch} album={album} />
-        )} */}
         {!favorite && (
           <ButtonFavorite
             dispatch={dispatch}

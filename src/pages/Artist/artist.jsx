@@ -17,11 +17,11 @@ const Artist = () => {
 
   useEffect(() => {
     getArtist(params.id);
-    getAlbums(params.id);
-  });
+  }, [params.id]);
 
   const getArtist = async (id) => {
     const artist = await getArtistById(id);
+    getAlbums(params.id);
     setArtist(artist);
   };
 

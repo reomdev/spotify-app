@@ -17,11 +17,6 @@ const HeaderLogin = () => {
       <div className="container">
         <a className="navbar-brand">
           <img src={spotifyApp} className="img-fluid Header--logo" alt="logo" />
-          {/* <img
-            src={spotifyApp}
-            className="img-fluid d-block d-sm-block d-md-none"
-            alt="logo"
-          /> */}
         </a>
         <div className="Header--options">
           <Link to="/home">
